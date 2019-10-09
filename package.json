@@ -1,0 +1,28 @@
+{
+  "name": "Moviesor-BackEnd",
+  "version": "1.0.0",
+  "description": "Movies Advisor",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Yodinsky",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bunyan": "^1.8.12",
+    "bunyan-rotating-file-stream": "^1.6.3",
+    "config": "^3.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "thread-sleep": "^2.2.0"
+  },
+  "devDependencies": {}
+}
