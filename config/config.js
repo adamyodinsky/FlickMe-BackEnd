@@ -1,6 +1,6 @@
 module.exports = {
     // ---------LOCAL_APP----------------------------
-    appName: "Moviesor-BackEnd",
+    appName: "MoChooe-BackEnd",
     appHost:  process.env.APP_HOST || "localhost",
     appPort: Number(process.env.APP_PORT || 3000),
     logLevel: process.env.LOG_LEVEL || "info",
