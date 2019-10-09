@@ -4,7 +4,7 @@ module.exports = {
     appHost:  process.env.APP_HOST || "localhost",
     appPort: Number(process.env.APP_PORT || 3000),
     logLevel: process.env.LOG_LEVEL || "info",
-    logsPath: process.env.LOGS_PATH || "./logs",
+    logsPath: process.env.LOGS_PATH || `${process.env.BASE_DIR_NAME}/logs`,
     jwtToken: process.env.JWT_SECRET,
     tokenExpiration: Number(process.env.TOKEN_EXPR) || 36000000,
     yearMax: Number(process.env.YEAR_MAX) || 2019,

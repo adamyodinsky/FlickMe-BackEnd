@@ -1,3 +1,4 @@
+process.env.BASE_DIR_NAME = __dirname;
 const config  = require('./config/config');
 const express = require('express');
 const router = require('./routes/router')();
@@ -6,6 +7,7 @@ const connectDB = require('./config/db');
 const syntaxErr = require('./middleware/syntaxErr');
 const cors = require('cors');
 const corsOptions = require('./config/corsConfig');
+
 
 const app = express();
 connectDB();
