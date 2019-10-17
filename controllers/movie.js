@@ -4,22 +4,34 @@ const mongoose = require('mongoose');
 
 const getRandomMovie = async(req, res) => {
     
-    const { from_year, to_year, from_rank, to_rank } = req.query;
-      
+    let from_year = Number(req.query.from_year);
+    let to_year = Number(req.query.to_year);
+    let from_rank = Number(req.query.from_quality);
+    let to_rank = Number(req.query.to_quality);
+
     if (from_rank === 0) {
-      from_rank = 1
+      from_rank = 1;
     }
 
+    if ( to_rank < from_rank ) {
+      to_rank = from_rank;
+    }
+
+    if ( from_year > to_year ) {
+      from_year = to_year;
+    }
+    
     const options = {
       year: {
-        $gte: `${from_year}`,
-        $lte: `${to_year}`
+        $gte: from_year,
+        $lte: to_year
       },
       rank: {
-        $gte: `${from_rank}`,
-        $lte: `${to_rank}`
+        $gte: from_rank,
+        $lte: to_rank
       }
     };
+
 
     try {
       // get a random index of a movie

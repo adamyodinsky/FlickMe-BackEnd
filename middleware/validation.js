@@ -24,8 +24,8 @@ const validationRules = (method) => {
       return [
         query('from_year', 'from_year is not valid').isInt({ gt: config.yearMin - 1 }),
         query('to_year', 'to_year is not valid').isInt({ lt: config.yearMax + 1 }),
-        query('from_rank', 'from_rank is not valid').isInt({ gt: 0 - 1 }),
-        query('to_rank', 'to_rank is not valid').isInt({ lt: 100 + 1 }),
+        query('from_quality', 'from_quality is not valid').isInt({ gt: 0 - 1 }),
+        query('to_quality', 'to_quality is not valid').isInt({ lt: 100 + 1 }),
       ];
   }
 };
