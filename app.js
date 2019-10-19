@@ -13,7 +13,8 @@ const app = express();
 connectDB();
 
 //init Middleware
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json({extended: true}));
 app.use(syntaxErr);
 app.use('/v1', router);

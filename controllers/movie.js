@@ -41,8 +41,12 @@ const getRandomMovie = async(req, res) => {
 
       // grab a random movie and send it
       const movie = await collection.find(options).limit(-1).skip(random).next();
-      res.status(200).json(movie);
-      logger.info({status: 200, body: movie.fullName});
+      if(movie){
+        logger.info({status: 200, body: movie.fullName, filter: options}, 'Movie was found');
+      } else {
+        logger.info({status: 200, body: movie, filter: options }, 'Movie not Found');
+      }
+        res.status(200).json(movie);
   } catch (e) {
       logger.error(e.message);
       res.status(500).json(e.message);

@@ -13,7 +13,7 @@ const routes = () => {
 
     //  Users and Authentication
     router.get('/health', health);
-    router.get('/convert', authMW, convert);
+    // router.get('/convert', convert);
     router.get('/auth',authMW, auth);
     router.post('/auth', validationRules('login'), validate, login);
     router.post('/users', validationRules('users'), validate ,createUser);

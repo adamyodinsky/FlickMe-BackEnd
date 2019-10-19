@@ -7,19 +7,18 @@ const convert = async (req, res) => {
     try {
         let result = [];
         const collection = await mongoose.connection.db.collection(config.tomatoModelName);
-        let result2 = await collection.find({
-            rank: { $lte: 10},
-            year: { $gte: 1976, $lte: 2000 }
-        }).count();
+        // let result2 = await collection.find({
+        //     year: { $gte: 2005, $lte: 2010 }
+        // })
         // .forEach((x) => {
         //     result.push(x.year);
         // })
 
         // console.log(result);
-        // result = await collection.find().forEach( function (x) {
-        //     x.year = parseInt(x.year);
-        //     collection.save(x);
-        // });
+        result = await collection.find({year: { $gte: 2005, $lte: 2010 }}).forEach( function (x) {
+            x.year = parseInt(x.year);
+            collection.save(x);
+        });
         
         // let sorted = await result.sort();
         // let year = await sorted[0];
@@ -32,7 +31,7 @@ const convert = async (req, res) => {
         //     year++;
         // }
 
-        res.status(200).json(result2);
+        res.status(200).json('OK');
     } catch (e) {
         res.status(500).json('ERROR');
         console.log(e.message);
