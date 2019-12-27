@@ -3,7 +3,7 @@ const config = require('../config/config');
 const mongoose = require('mongoose');
 
 const getRandomMovie = async(req, res) => {
-    
+
     let from_year = Number(req.query.from_year);
     let to_year = Number(req.query.to_year);
     let from_rank = Number(req.query.from_quality);
@@ -20,16 +20,16 @@ const getRandomMovie = async(req, res) => {
     if ( from_year > to_year ) {
       from_year = to_year;
     }
-    
+
     const options = {
-      year: {
-        $gte: from_year,
-        $lte: to_year
-      },
-      rank: {
-        $gte: from_rank,
-        $lte: to_rank
-      }
+      // year: {
+      //   $gte: from_year,
+      //   $lte: to_year
+      // },
+      // rank: {
+      //   $gte: from_rank,
+      //   $lte: to_rank
+      // }
     };
 
 
